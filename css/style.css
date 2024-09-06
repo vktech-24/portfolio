@@ -5,6 +5,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    scrollbar-width: none;
+}
+html{
+    scroll-behavior: smooth;
 }
 :root{
     --body:rgb(20, 20, 20);
@@ -27,6 +31,7 @@ body{
     width:100%;
     height: auto;
     background-color: var(--body);
+    transition: all ease-in-out 0.5s;
 }
 /* GIVEN STYLES FOR HOME PAGE*/
 .home{
@@ -410,6 +415,12 @@ header h1{
     border-bottom-right-radius: 90px;
     position: relative;
 }
+#backend{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+}
 .logo{
     width: 6.5vw;
     height: 6.5vw;
@@ -433,7 +444,7 @@ header h1{
 .projects{
     width: 85%;
     height: auto;
-    background-color: var(--test);
+ /*    background-color: var(--test); */
     margin: auto;
     margin-bottom: 2%;
     display: grid;
@@ -448,7 +459,7 @@ header h1{
 .projects header{
     font-size: 18px;
     grid-area: header;
-    background-color: black;
+   /*  background-color: black; */
 }
 .projects header h1{
     font-weight: 600;
@@ -458,19 +469,20 @@ header h1{
     width: 100%;
     height: auto;
     grid-area: article;
-    background-color: black;
+   /*  background-color: black; */
     display: grid;
 }
 .outer{
     width: 100%;
     height: auto;
-    background-color: rgb(0, 255, 128);
+ /*    background-color: rgb(0, 255, 128); */
     display: flex;
     padding: 10px;
+    border-bottom:1px solid var(--con);
 }
 .projects article .project{
     width: clamp(400px,4vw,400px);
-    height:clamp(200px,3vh,200px);
+    height:clamp(210px,3vh,210px);
     /*  background-color: #fff; */
     overflow: hidden;
     /*  position: relative; */
@@ -483,12 +495,13 @@ header h1{
 } */
 .pro-dis{
     width: 70%;
-    height: 200px;
-    background-color: red;
-    padding: 5px;
+    height: 210px;
+   /*  background-color: red; */
+    color: var(--con);
 }
 .pro-dis p{
-    font-size: clamp(10px,1.4vw,16px);
+    font-size: clamp(13px,1.1vw,14px);
+    color: var(--white);
 }
 .pro-img{
     width: 100%;
@@ -532,12 +545,12 @@ header h1{
       }
       .anchor > :first-child{
         display: block;
-        font-size: 20px;
+        font-size: 25px;
         position: absolute;
         top: 0;
         right: 0;
-        margin-top: 11%;
-        margin-right: 11%;
+        margin-top: 15%;
+        margin-right: 15%;
         cursor: pointer;
     }
       nav{
@@ -666,8 +679,29 @@ header h1{
         width: 95%;
     }
     .skill{
-        width: 90%;
-        height: 80%;
+        width: 76px;
+    }
+    #backend{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+    }
+    #backend .skill{
+        width: 76px;
+    }
+    #database .skill{
+        width: 76px;
+    }
+    .text{
+        position: absolute;
+        bottom: 10%;
+        font-size: clamp(6px,2.5vw,25px);
+        text-align: center;
+    }
+    .text p{
+        text-align: center;
+        font-size: clamp(7px,1.5vw,15px);
     }
     .projects{
       height: auto;
@@ -708,20 +742,20 @@ header h1{
         width: 150px;
     }
     .pro-details{
-        font-size: 1.4rem;
+        font-size: 1.7rem;
         margin-left: 0;
     }
     .name p{
-        font-size: 20px;
+        font-size: 21px;
         margin-left: 15px;
     }
     .social i{
-        font-size: 22px;
+        font-size: 25px;
     }
     .pro-details button{
         width: 100%;
         height: 40px;
-        font-size: 15px;
+        font-size: 16px;
     }
     .photo{
         height: 350px;
@@ -789,6 +823,18 @@ header h1{
     .skill{
         width: 50px;
         height: 75%;
+    }
+    #backend{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10px;
+    }
+    #backend .skill{
+        width: 50px;
+    }
+    #database .skill{
+        width: 50px;
     }
    /*  .projects article .project{
           width: 280px;

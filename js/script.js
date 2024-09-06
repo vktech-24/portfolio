@@ -9,7 +9,7 @@ menu.addEventListener("click",function(){
     menu_icon.style.right="0"
 })
 
-let cancel=document.getElementById("cancel");
+var cancel=document.getElementById("cancel");
 cancel.addEventListener("click",function(){
     cancel.parentElement.style.right="-200px"
     let childs=cancel.parentElement.nextElementSibling.children;
@@ -17,8 +17,10 @@ cancel.addEventListener("click",function(){
         childs[i].style.display="block"
     }
 })
+
 //when windows clicked menu will close
-/* window.addEventListener("click",function(){
+/* let home=document.querySelector(".home")
+home.addEventListener("click",function(){
     cancel.parentElement.style.right="-200px"
     let childs=cancel.parentElement.nextElementSibling.children;
     for(let i=0; i<childs.length-1; i++){
