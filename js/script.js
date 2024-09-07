@@ -5,8 +5,9 @@ menu.addEventListener("click",function(){
     for(let i=0; i<parent.children.length-1; i++){
         parent.children[i].style.display="none"
     }
-    let menu_icon=menu.parentElement.previousElementSibling
+    var menu_icon=menu.parentElement.previousElementSibling
     menu_icon.style.right="0"
+   /*  console.log(menu_icon) */
 })
 
 var cancel=document.getElementById("cancel");
@@ -18,15 +19,30 @@ cancel.addEventListener("click",function(){
     }
 })
 
-//when windows clicked menu will close
-/* let home=document.querySelector(".home")
-home.addEventListener("click",function(){
-    cancel.parentElement.style.right="-200px"
+//when anchor tag is clicked the menu should be remove
+let nav_anchor=document.querySelectorAll(".anchor a")
+/* console.log(nav_anchor) */
+nav_anchor.forEach((anchor)=>{
+    anchor.addEventListener("click",function(){
+        cancel.parentElement.style.right="-200px"
     let childs=cancel.parentElement.nextElementSibling.children;
     for(let i=0; i<childs.length-1; i++){
         childs[i].style.display="block"
     }
-}) */
+    })
+})
+
+window.addEventListener('click', function(event) {
+    console.log(event.target)
+    if (!menu.contains(event.target) && !cancel.contains(event.target)) {
+        cancel.parentElement.style.right="-200px"
+        let childs=cancel.parentElement.nextElementSibling.children;
+        for(let i=0; i<childs.length-1; i++){
+            childs[i].style.display="block"
+        }
+    }
+});
+
 
 //--------------------------------------------
 //This script for the slider in skills page
