@@ -499,6 +499,7 @@ header h1{
    /*  background-color: red; */
     color: var(--con);
     padding-left: 10px; 
+    overflow: scroll;
 }
 .pro-dis p{
     font-size: clamp(13px,1.1vw,14px);
@@ -534,8 +535,119 @@ header h1{
     margin: auto;
     margin-top: 5%;
     width: 85%;
-    height: 600px;
+    min-height: 600px;
     background-color: var(--test);
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "main article"
+    "main article";
+    grid-template-rows: 50px 1fr 1fr;
+    grid-template-columns: 2fr 2fr;
+}
+.contact header{
+    grid-area: header;
+    background-color: black;
+    border: 1px solid white;
+}
+.contact header h1{
+    font-weight: 600;
+    color: var(--con);
+}
+.contact main{
+    grid-area: main;
+    background-color: black;
+    border: 1px solid white;
+    display: grid;
+    place-items: center;
+}
+.contact article{
+    grid-area: article;
+    background-color: black;
+    border: 1px solid white;
+    display: grid;
+    place-items: center;
+}
+.contact-card {
+    background-color: #f7c32f;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 40vw;
+    text-align: start;
+    height: 70%;
+}
+.contact-card h2{
+    margin-bottom: 20px;
+    font-size: clamp(15px,3vw,30px);
+}
+
+/* .contact-header {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: white;
+}
+ */
+.contact-info i {
+    margin-right: 10px;
+    color: #333;
+    font-size: clamp(15px,1.7vw,16px);
+}
+
+.contact-info p{
+    border-bottom: 1px dashed white;
+    margin-bottom: 20px;
+    font-size: clamp(14px,2vw,20px);
+}
+
+.contact-info .icon {
+    margin-right: 10px;
+}
+.contact-form {
+    background-color: #f9d44a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 40vw;
+    text-align: center;
+    height: 70%;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: #3d2906; /* Text color matching the design */
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #ffe8b0;
+    color: #333;
+}
+.contact-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #555;
 }
 @media (max-width:1100px) {
     .anchor{
@@ -618,7 +730,7 @@ header h1{
         width: 90%;
     }
     .skill{
-        width: 80%;
+        width: 130px;
         height: 60%;
     }
     /* .projects{
@@ -747,6 +859,37 @@ header h1{
         width: 65px;
         height: 55%;
     }
+    .pro-dis{
+        padding: 0px;
+    }
+    #backend .skill{
+        width:65px;
+    }
+    #database .skill{
+        width:65px;
+    }
+    .contact{
+        grid-template-areas:
+    "header header"
+    "main main"
+    "article article";
+    grid-template-rows: 50px 2fr 2fr;
+    height: 900px;
+    }
+    .contact-card{
+      width: 90%;
+      height: 90%;
+    }
+    .contact-card h2{
+        font-size: clamp(15px,5vw,30px);
+    }
+    .contact-card p{
+        font-size: clamp(12px,3vw,20px);
+    }
+    .contact-form{
+      width: 90%;
+      height: 90%;
+    }
 }
 
 @media (max-width:450px) {
@@ -855,5 +998,13 @@ header h1{
           width: 280px;
           height: 300px;
     } */
+    .contact{
+       grid-template-rows: 50px 1.5fr 2fr;
+       height: 800px;
+     }
+    .contact-card{
+        width: 90%;
+        height: 80%;
+      }
    
 }
